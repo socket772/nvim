@@ -1,8 +1,11 @@
 -- nvim setup
 vim.wo.relativenumber = true
 
-
 require("config.lazy")
+
+require("catppuccin")
+vim.cmd.colorscheme "catppuccin-mocha"
+
 require("mason").setup({ PATH = "append"})
 require("mason-lspconfig").setup()
 
@@ -14,3 +17,5 @@ require("mason-lspconfig").setup_handlers {
 		require("lspconfig")[server_name].setup {}
 	end,
 }
+
+require('lualine').setup()
